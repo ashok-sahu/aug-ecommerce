@@ -15,6 +15,8 @@ const cors = require("cors");
 const userAuthRoute = require("./routes/userAuthRoute");
 const adminAuthRoute = require("./routes/admin/adminAuthRoute");
 const catagoryRoute = require("./routes/catagoryRoute");
+const productRoute = require("./routes/productsRoute");
+const cartRoute = require("./routes/cartRoute")
 
 //express setup
 const app = express();
@@ -77,7 +79,7 @@ app.use((req, res, next) => {
 });
 
 //viewpath
-app.use(express.static(path.join(__dirname,'../../frontend',"public")))
+app.use(express.static(path.join(__dirname, "../../frontend", "public")));
 
 //routes use
 app.get("/", (req, res) => {
@@ -88,5 +90,8 @@ app.get("/", (req, res) => {
 app.use("/api", userAuthRoute);
 app.use("/api", adminAuthRoute);
 app.use("/api", catagoryRoute);
+app.use("/api", productRoute);
+app.use("/api", cartRoute);
+
 
 module.exports = app;

@@ -1,0 +1,8 @@
+#add catagory
+POST http://localhost:8080/api/catagory/create
+
+Content-Type: application/json
+
+{
+    "name":"fashion"
+}
